@@ -29,7 +29,7 @@ class Calanque {
         return CLLocationCoordinate2D(latitude: _latitude, longitude: _longitude)
     }
     
-    var imamge:UIImage?{
+    var image:UIImage?{
         return _image
     }
     
