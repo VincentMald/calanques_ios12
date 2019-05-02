@@ -241,7 +241,13 @@
                             <outlet property="delegate" destination="VQ2-SP-DU0" id="WEm-N2-tzt"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2FZ-W9-u28"/>
+                    <navigationItem key="navigationItem" id="2FZ-W9-u28">
+                        <barButtonItem key="rightBarButtonItem" title="Reload" id="5Or-H3-uVl">
+                            <connections>
+                                <action selector="reloadAction:" destination="VQ2-SP-DU0" id="xvA-6O-A5W"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="QTT-GO-4IH" kind="show" identifier="detail" id="mDh-D9-uSm"/>
                     </connections>
