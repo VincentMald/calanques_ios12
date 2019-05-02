@@ -84,8 +84,8 @@ class TableViewIntegreeController: UITableViewController {
         if editingStyle == .delete {
             calanques.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
-    
 
     /*
     // Override to support rearranging the table view.
