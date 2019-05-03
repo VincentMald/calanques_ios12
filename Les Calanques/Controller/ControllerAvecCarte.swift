@@ -9,16 +9,48 @@
 import UIKit
 import MapKit
 
-class ControllerAvecCarte: UIViewController, MKMapViewDelegate {
+class ControllerAvecCarte: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
     var calanques: [Calanque] = CallanqueCollection().all()
+    var locationManager = CLLocationManager()
+    var userPosition: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
+        locationManager.delegate = self
+        mapView.showsUserLocation = true
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
         addAnnotations()
+        NotificationCenter.default.addObserver(self, selector: #selector(notifDetail), name: Notification.Name("detail"), object: nil)
+        if calanques.count > 5 {
+            let premiere = calanques[5].coordonnee
+            setupMap(coordonnee: premiere)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if locations.count > 0 {
+            if let maPosition = locations.last {
+                userPosition = maPosition
+            }
+        }
+    }
+    
+    func setupMap(coordonnee: CLLocationCoordinate2D){
+        let span = MKCoordinateSpan(latitudeDelta: 0.35, longitudeDelta: 0.35)
+        let region = MKCoordinateRegion(center: coordonnee, span: span)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    @objc func notifDetail(notification:Notification){
+        if let calanque = notification.object as? Calanque {
+            print("j'ai une calanque")
+            toDetail(calanque: calanque)
+        }
     }
     
     func toDetail(calanque: Calanque){
@@ -85,7 +117,9 @@ class ControllerAvecCarte: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func getPosition(_ sender: Any) {
-        
+        if userPosition != nil {
+            setupMap(coordonnee: userPosition!.coordinate)
+        }
     }
     
 }
