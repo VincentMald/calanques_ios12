@@ -163,35 +163,30 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nen-xg-zYd">
                                 <rect key="frame" x="0.0" y="64" width="375" height="510"/>
                             </mapView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zgB-IA-jIh">
-                                <rect key="frame" x="20" y="74" width="335" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="jHz-KU-sbB"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Standard"/>
-                                    <segment title="Satellite"/>
-                                    <segment title="Hybride"/>
-                                </segments>
-                                <connections>
-                                    <action selector="segmentedChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="E6o-Yc-H2c"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nen-xg-zYd" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="7LK-rr-2NO"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="zgB-IA-jIh" secondAttribute="trailing" constant="20" id="9Ma-ry-stB"/>
-                            <constraint firstItem="zgB-IA-jIh" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="20" id="A5e-b9-SB6"/>
                             <constraint firstItem="nen-xg-zYd" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="ITJ-34-fZC"/>
                             <constraint firstItem="nen-xg-zYd" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="mRJ-30-rYU"/>
-                            <constraint firstItem="zgB-IA-jIh" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="10" id="yaH-Ax-syp"/>
                             <constraint firstItem="nen-xg-zYd" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="zla-JT-Ayh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Zp9-mX-NXO">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="zgB-IA-jIh">
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Standard"/>
+                                <segment title="Satellite"/>
+                                <segment title="Hybride"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="E6o-Yc-H2c"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="placeholder" id="PXi-8S-Ik2">
                             <connections>
                                 <action selector="getPosition:" destination="8rJ-Kc-sve" id="2tt-Dj-CLz"/>
