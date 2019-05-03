@@ -159,10 +159,49 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW" customClass="Controller">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nen-xg-zYd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="510"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zgB-IA-jIh">
+                                <rect key="frame" x="20" y="74" width="335" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="jHz-KU-sbB"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybride"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="E6o-Yc-H2c"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nen-xg-zYd" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="7LK-rr-2NO"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="zgB-IA-jIh" secondAttribute="trailing" constant="20" id="9Ma-ry-stB"/>
+                            <constraint firstItem="zgB-IA-jIh" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="20" id="A5e-b9-SB6"/>
+                            <constraint firstItem="nen-xg-zYd" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="ITJ-34-fZC"/>
+                            <constraint firstItem="nen-xg-zYd" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="mRJ-30-rYU"/>
+                            <constraint firstItem="zgB-IA-jIh" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="10" id="yaH-Ax-syp"/>
+                            <constraint firstItem="nen-xg-zYd" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="zla-JT-Ayh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Zp9-mX-NXO"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Zp9-mX-NXO">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="placeholder" id="PXi-8S-Ik2">
+                            <connections>
+                                <action selector="getPosition:" destination="8rJ-Kc-sve" id="2tt-Dj-CLz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="nen-xg-zYd" id="1IU-Bq-hNY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -310,6 +349,27 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sugiton" translatesAutoresizingMaskIntoConstraints="NO" id="diS-WN-scj">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPZ-6f-ofa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="acn-iw-gSB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dwj-W4-KzP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="8lp-eu-Dgl">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sugiton" translatesAutoresizingMaskIntoConstraints="NO" id="7e0-GA-Pxh" customClass="ImageRonde" customModule="Les_Calanques" customModuleProvider="target">
                                 <rect key="frame" x="100" y="50" width="175" height="175"/>
                                 <constraints>
@@ -345,10 +405,14 @@
                             <constraint firstItem="x8b-q0-hIW" firstAttribute="top" secondItem="cMd-on-O3Z" secondAttribute="bottom" constant="20" id="Pgf-Fi-eBQ"/>
                             <constraint firstItem="cMd-on-O3Z" firstAttribute="leading" secondItem="3TN-qV-cRo" secondAttribute="leading" constant="20" id="YCS-f0-kfE"/>
                             <constraint firstItem="cMd-on-O3Z" firstAttribute="top" secondItem="7e0-GA-Pxh" secondAttribute="bottom" constant="20" id="bDp-QA-fK9"/>
+                            <constraint firstItem="SPZ-6f-ofa" firstAttribute="leading" secondItem="3TN-qV-cRo" secondAttribute="leading" id="ckL-qU-Mi1"/>
                             <constraint firstItem="3TN-qV-cRo" firstAttribute="trailing" secondItem="x8b-q0-hIW" secondAttribute="trailing" constant="20" id="e8W-bs-q93"/>
                             <constraint firstItem="diS-WN-scj" firstAttribute="leading" secondItem="3TN-qV-cRo" secondAttribute="leading" id="hPS-XL-b5T"/>
+                            <constraint firstItem="SPZ-6f-ofa" firstAttribute="bottom" secondItem="zyE-iE-CDN" secondAttribute="bottom" id="hje-to-ueq"/>
+                            <constraint firstItem="SPZ-6f-ofa" firstAttribute="trailing" secondItem="3TN-qV-cRo" secondAttribute="trailing" id="jak-J2-aTb"/>
                             <constraint firstItem="diS-WN-scj" firstAttribute="top" secondItem="zyE-iE-CDN" secondAttribute="top" constant="20" id="ln4-o0-gOQ"/>
                             <constraint firstAttribute="bottom" secondItem="diS-WN-scj" secondAttribute="bottom" id="qaA-C6-ZoV"/>
+                            <constraint firstItem="SPZ-6f-ofa" firstAttribute="top" secondItem="zyE-iE-CDN" secondAttribute="top" id="tEe-PE-18c"/>
                             <constraint firstItem="3TN-qV-cRo" firstAttribute="trailing" secondItem="diS-WN-scj" secondAttribute="trailing" id="wAo-GK-yxt"/>
                             <constraint firstItem="7e0-GA-Pxh" firstAttribute="top" secondItem="3TN-qV-cRo" secondAttribute="top" constant="30" id="xcp-h3-aS9"/>
                             <constraint firstItem="x8b-q0-hIW" firstAttribute="leading" secondItem="3TN-qV-cRo" secondAttribute="leading" constant="20" id="zdY-TD-ZX0"/>
@@ -441,6 +505,7 @@
         <image name="Marseilleveyre" width="614.4000244140625" height="409.67999267578125"/>
         <image name="earth" width="25.600000381469727" height="25.600000381469727"/>
         <image name="list" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="placeholder" width="32" height="32"/>
         <image name="port pin" width="245.75999450683594" height="164.16000366210938"/>
         <image name="sugiton" width="1600" height="896"/>
     </resources>
