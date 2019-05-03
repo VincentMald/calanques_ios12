@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B22D2E03227C2B5500F07504 /* MonAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D2E02227C2B5500F07504 /* MonAnnotation.swift */; };
+		B22D2E05227C3E2A00F07504 /* MonAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D2E04227C3E2A00F07504 /* MonAnnotationView.swift */; };
 		B2423F53227AD34A00C01E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2423F52227AD34A00C01E9C /* AppDelegate.swift */; };
 		B2423F5A227AD34A00C01E9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2423F58227AD34A00C01E9C /* Main.storyboard */; };
 		B2423F5C227AD34C00C01E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2423F5B227AD34C00C01E9C /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B22D2E02227C2B5500F07504 /* MonAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonAnnotation.swift; sourceTree = "<group>"; };
+		B22D2E04227C3E2A00F07504 /* MonAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonAnnotationView.swift; sourceTree = "<group>"; };
 		B2423F4F227AD34A00C01E9C /* Les Calanques.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Les Calanques.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2423F52227AD34A00C01E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2423F59227AD34A00C01E9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 			children = (
 				B2423F69227ADA7500C01E9C /* Calanque.swift */,
 				B2423F6B227ADBF500C01E9C /* CallanqueCollection.swift */,
+				B22D2E02227C2B5500F07504 /* MonAnnotation.swift */,
 			);
 			path = Modele;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 				B2F87869227AF34000CD760F /* ImageRonde.swift */,
 				B2F8786B227AFB9200CD760F /* CalanqueCellAlternative.swift */,
 				B2F53D3B227B36230020F8D4 /* BoutonArrondi.swift */,
+				B22D2E04227C3E2A00F07504 /* MonAnnotationView.swift */,
 			);
 			path = Vue;
 			sourceTree = "<group>";
@@ -188,7 +194,9 @@
 			files = (
 				B2423F72227ADE2300C01E9C /* TableViewIntegreeController.swift in Sources */,
 				B2423F53227AD34A00C01E9C /* AppDelegate.swift in Sources */,
+				B22D2E05227C3E2A00F07504 /* MonAnnotationView.swift in Sources */,
 				B2F87868227AEE1D00CD760F /* CalanqueCell.swift in Sources */,
+				B22D2E03227C2B5500F07504 /* MonAnnotation.swift in Sources */,
 				B2423F6C227ADBF500C01E9C /* CallanqueCollection.swift in Sources */,
 				B2F53D3C227B36230020F8D4 /* BoutonArrondi.swift in Sources */,
 				B2423F70227ADE0600C01E9C /* ControllerAvecCarte.swift in Sources */,
