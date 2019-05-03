@@ -11,6 +11,14 @@ import MapKit
 
 class MonAnnotationView: MKAnnotationView {
     
+    var controller: ControllerAvecCarte?
+    
+    init(controller: ControllerAvecCarte,annotation: MKAnnotation?, reuseIdentifier: String?) {
+        self.controller = controller
+        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        setupAnnotation()
+    }
+    
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         setupAnnotation()
@@ -60,7 +68,8 @@ class MonAnnotationView: MKAnnotationView {
     }
     
     @objc func detail(){
-        
+        guard let anno = annotation as? MonAnnotation else {return}
+        controller?.toDetail(calanque: anno.calanque)
     }
     
     @objc func gps(){
